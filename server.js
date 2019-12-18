@@ -32,7 +32,7 @@ app.get("/api/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "db.json"));
 });
 
-// Takes a JSON input with key "message" and adds a new note object with that message to the db.json file
+// Takes a JSON input with keys "title" and "text" and adds a new note object with that message to the db.json file
 app.post("/api/notes", function(req, res) {
     fs.readFile(path.join(__dirname, "db.json"), "utf8", function(error, response) {
         if (error) {
